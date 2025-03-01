@@ -3,17 +3,29 @@
     --slate-300: hsl(212, 45%, 89%);
     --slate-500: hsl(216, 15%, 48%);
     --slate-900: hsl(218, 44%, 22%);
+
+    --gray: darkgray;
 }
 
 body {
     background: var(--slate-300);
+    font-family: 'Outfit', 'Times New Roman', serif;
     font-size: 15px;
+}
+
+.container,
+img {
+    border-radius: 24px;
+}
+
+.main {
+    margin: 0;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    border-radius: 5px;
+    align-items: center;
     background: white;
     width: 600px;
     padding: 24px;
@@ -23,9 +35,10 @@ body {
     display: flex;
     flex-direction: column;
     padding: 24px;
+    width: 500px;
     text-align: center;
 }
 
-img {
-    border-radius: 5px;
+p {
+    color: var(--gray);
 }
