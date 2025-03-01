@@ -11,6 +11,11 @@ body {
     background: var(--slate-300);
     font-family: 'Outfit', 'Times New Roman', serif;
     font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
 }
 
 .container,
