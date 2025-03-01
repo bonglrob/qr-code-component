@@ -40,40 +40,33 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Built with
 
-- Semantic HTML5 markup
 - CSS custom properties
+- CSS varaiables
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+#### `@import` vs `<Link>` for Fonts
 
-To see how you can add code snippets, see below:
+From [Google Fonts](https://fonts.google.com/selection/embed), there are 2 methods for installing new web fonts to use. Which one should you use and why does it matter?
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+##### styles.css
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+##### index.html
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+`<link>` will allow the the fonts to be cached to be loaded faster than `@import` because `<link>` sits higher in the document parsing process. `<link>` is also more compatible with older browsers.
+Choose `<link>` if you want to apply the font styles immediately with the styles.css
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+With `@import` being used in the CSS, it doesn't block other resources from being loaded, allowing the CSS to first render and then fetch the fonts. 
+Choose `@import` if you want more control in when styles are applied: style.css first, and then have the font fetched and applied second
+
 
 ### Continued development
 
